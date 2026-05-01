@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Report submitted succefully</title>
+    <link rel="stylesheet" href="hack4.css">
+</head>
+<body>
+    <div class="success-container">
+
+  <div class="icon">✅</div>
+
+  <h1>Report Submitted Successfully</h1>
+
+  <p>
+    Thank you for speaking up. Your voice helps improve the community.
+    Your issue has been received and will be reviewed for the right action to be taken.
+  </p>
+
+  <div class="tracking-box">
+    <h2>Your Tracking ID</h2>
+    <div class="tracking-id" id="trackingID">tracking-id :</div>
+
+    <div class="note">
+      Please save this ID carefully. You will use it to track the progress of your report.
+    </div>
+  </div>
+
+  <div class="buttons">
+    <a href="hack3.html#track-progress">
+    <button class="primary-btn">Track My Report</button>
+    </a>
+    <a href="hack3.html">
+    <button class="secondary-btn">Return Home</button>
+    </a>
+  </div>
+
+</div>
+<script>
+window.onload = function () {
+    let savedTrackingID = localStorage.getItem("latestTrackingID");
+
+    if (savedTrackingID) {
+        document.getElementById("trackingID").textContent = savedTrackingID;
+    } else {
+        document.getElementById("trackingID").textContent = "No Tracking ID Found";
+    }
+};
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report issue page</title>
+    <link rel="stylesheet" href="hack3.css">
+</head>
+<body>
+    <div class="container">
+
+  <!-- TOP SECTION -->
+  <div class="top-section">
+
+    <!-- LEFT -->
+    <div class="left-panel">
+      <div class="tag">Community Voice Platform</div>
+
+      <h1>Speak Up. Be Heard. Create Change.</h1>
+
+      <p>
+        Your report helps shine light on real community problems.
+        Every issue reported pushes your community one step forward.
+      </p>
+
+      <div class="stats">
+        <div class="card">
+          <h2 id="reportedCount">128</h2>
+          <span>reported</span>
+        </div>
+
+        <div class="card">
+          <h2 id="resolvedcount">0</h2>
+          <span>resolved</span>
+        </div>
+
+        <div class="card">
+          <h2 id="pendingCount">14</h2>
+          <span>pending</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-panel">
+      <div class="step">Step 2 of 2</div>
+
+      <h2>Report Your Issue</h2>
+
+      <p>
+        Help us understand the problem clearly so the right action
+        can be taken quickly and effectively.
+      </p>
+
+      <form action="hack4.html" method="get">
+        <select>
+          <option>Select Issue Category</option>
+          <option>Roads</option>
+          <option>Health</option>
+          <option>Education</option>
+          <option>Security</option>
+          <option>Water Supply</option>
+          <option>Electricity</option>
+          <option>Corruption</option>
+          <option>Other</option>
+        </select>
+
+        <textarea placeholder="Describe the issue clearly so action can be taken quickly..."></textarea>
+
+        <input type="text" id="Describe" placeholder="Where is this happening?" required>
+
+        <label>Upload Evidence (Optional)</label>
+        <input type="file">
+
+        <button type="button" onclick="submitReport()">Submit Report
+
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+ 
+  <script>
+/* Load counts when page opens */
+window.onload = function () {
+    let reported = localStorage.getItem("reportedCount") || 0;
+    let pending = localStorage.getItem("pendingCount") || 0;
+
+    document.getElementById("reportedCount").textContent = reported;
+    document.getElementById("pendingCount").textContent = pending;
+};
+
+/* Create tracking ID */
+function generateTrackingID() {
+    let randomNumber = Math.floor(Math.random() * 9000) + 1000;
+    return "CV-" + randomNumber;
+}
+
+/* Submit report function */
+function submitReport() {
+    let reported = parseInt(localStorage.getItem("reportedCount")) || 0;
+    let pending = parseInt(localStorage.getItem("pendingCount")) || 0;
+
+    /* Increase counts */
+    reported++;
+    pending++;
+
+    /* Save updated counts */
+    localStorage.setItem("reportedCount", reported);
+    localStorage.setItem("pendingCount", pending);
+
+    /* Generate tracking ID */
+    let trackingID = generateTrackingID();
+
+    /* Save tracking ID for success page */
+    localStorage.setItem("latestTrackingID", trackingID);
+
+    /* Redirect to success page */
+    window.location.href = "hack4.html";
+}
+</script>
+
+  <!-- TRACK REPORT -->
+  <div class="track-box" id="track-progress">
+    <h3>Track Your Report</h3>
+
+    <p>
+      Enter your tracking ID to check the current status of your report.
+    </p>
+
+    <div class="track-form" >
+      <input type="text" placeholder="Example: CV-2041">
+      <a href="#Recent-reports">
+      <button>Check Status</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- PUBLIC FEED -->
+  <div class="feed-box" id="Recent-reports">
+    <h3>Recent Community Reports</h3>
+
+    <div class="issue-item">
+      <h4>Broken Road Near Main Market</h4>
+      <p>Kampala Central</p>
+      <div class="status">Status: In Progress</div>
+    </div>
+
+    <div class="issue-item">
+      <h4>Water Shortage in Local Area</h4>
+      <p>Mukono District</p>
+      <div class="status">Status: Pending</div>
+    </div>
+
+    <div class="issue-item">
+      <h4>School Roof Damage</h4>
+      <p>Wakiso</p>
+      <div class="status">Status: Resolved</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

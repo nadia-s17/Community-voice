@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user-page</title>
+    <link rel="stylesheet" href="hack2.css">
+</head>
+<body>
+<div class="user-page">
+
+  <h1>Tell Us About You</h1>
+
+  <p>
+    Your information helps us understand and address your
+    community issue better.
+  </p>
+
+  <form id="user-page">
+      <input type="text" id="text" placeholder="Your Name (Optional)">
+      <input type="text" placeholder="Your Location">
+    <p> <label for="gender">Gender : </label>
+      <select name="gender" id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="rather not say"> Rather not say</option>
+      </select>
+      </p> 
+      <div class="label">
+     <label>Upload Photo (Optional)</label>
+      <input type="file" placeholder="choose a file">
+    </div>
+    <button type="button" onclick="goToPage3()">Continue</button>
+  </form>
+
+</div>
+<script>
+function goToPage3() {
+  document.querySelector(".user-page")
+  .classList.add("blur-transition");
+
+  setTimeout(() => {
+    window.location.href = "hack3.html";
+  }, 500);
+}
+</script>
+</body>
+</html>

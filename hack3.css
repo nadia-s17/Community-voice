@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #191d01, #09022b, #612a02);
+  color: white;
+  padding: 30px;
+}
+
+/* MAIN WRAPPER */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* TOP SECTION */
+.top-section {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+/* LEFT INFO PANEL */
+.left-panel {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(255,255,255,0.08);
+  padding: 35px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 18px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 30px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.left-panel h1 {
+  font-size: 42px;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.left-panel p {
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 30px;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 150px;
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.card span {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+}
+
+/* RIGHT REPORT FORM */
+.right-panel {
+  flex: 1;
+  min-width: 320px;
+  background: rgba(255,255,255,0.08);
+  padding: 35px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.step {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 10px;
+}
+
+.right-panel h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.right-panel p {
+  margin-bottom: 25px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+select,
+textarea,
+input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+option {
+  background: #0f172a;
+  color: white;
+}
+
+textarea {
+  height: 140px;
+  resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+}
+
+button {
+  padding: 15px;
+  border: none;
+  border-radius: 40px;
+  background: rgb(51, 31, 2);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover{
+     transform: translateY(-2px);
+}
+/* TRACK REPORT SECTION */
+.track-box {
+  margin-top: 30px;
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.track-box h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.track-box p {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 20px;
+}
+
+.track-form {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.track-form input {
+  max-width: 300px;
+}
+
+.track-form button {
+  min-width: 180px;
+}
+
+/* PUBLIC FEED */
+.feed-box {
+  margin-top: 30px;
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.feed-box h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.issue-item {
+  background: rgba(255,255,255,0.06);
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+}
+
+.issue-item h4 {
+  margin-bottom: 8px;
+}
+
+.status {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .left-panel h1 {
+    font-size: 34px;
+  }
+
+  .right-panel h2,
+  .track-box h3,
+  .feed-box h3 {
+    font-size: 26px;
+  }
+}

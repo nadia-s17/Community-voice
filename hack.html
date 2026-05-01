@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An online suggestion box </title>
+    <link rel="stylesheet" href="hack.css">
+</head>
+
+<body>
+    <header>
+    <h1 id="head">A community voice</h1>
+    <p>Many problems go unheard,<em><strong> Speak up </em></strong> and help bring change to your community</p>
+    <form id="pageform">
+    <div class="landing">
+    <button type="button" onclick="goToPage2()">Report an issue</button>
+    </div>
+    </form>
+    </header>
+    <script>
+function goToPage2() {
+  document.body.classList.add("page-transition");
+
+  setTimeout(() => {
+    window.location.href = "hack2.html";
+  }, 700);
+}
+</script>
+</body>
+</html>
